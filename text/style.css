@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #080622;
+  width: 100%;
+  height: 100vh;
+}
+
+#magic {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fill 0.3s ease forwards 3s;
+}
+
+#magic :nth-child(1) {
+  stroke-dasharray: 464px;
+  stroke-dashoffset: 464px;
+  animation: draw 3s ease forwards;
+}
+
+#magic :nth-child(2) {
+  stroke-dasharray: 351px;
+  stroke-dashoffset: 351px;
+  animation: draw 3s ease 0.1s forwards;
+}
+
+#magic :nth-child(3) {
+  stroke-dasharray: 481px;
+  stroke-dashoffset: 481px;
+  animation: draw 2s ease 0.2s forwards;
+}
+
+#magic :nth-child(4) {
+  stroke-dasharray: 166px;
+  stroke-dashoffset: 166px;
+  animation: draw 2s ease 0.3s forwards;
+}
+
+#magic :nth-child(5) {
+  stroke-dasharray: 277px;
+  stroke-dashoffset: 277px;
+  animation: draw 2s ease 0.4s forwards;
+}
+
+#stars {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  display: hidden;
+}
+
+#stars :nth-child(1) {
+  animation: twinkle 2s linear infinite both 2.5s;
+}
+
+#stars :nth-child(2) {
+  animation: twinkle 2s linear infinite both 1s;
+}
+
+#stars :nth-child(3) {
+  animation: twinkle 2s linear infinite both 1.5s;
+}
+
+#stars :nth-child(4) {
+  animation: twinkle 2s linear infinite both 2s;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fill {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: #ffffff;
+  }
+}
